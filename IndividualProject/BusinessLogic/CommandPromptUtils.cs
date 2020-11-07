@@ -14,32 +14,14 @@ namespace IndividualProject.BusinessLogic
         //-----------Trainer-------------------
         public Trainer GetTrainerDetails(List<string> subjects = null) //--> So we can give other list
         {
-            if (subjects == null) subjects = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" }; // --> for we can use an other if given or use the diffult
+            if (subjects == null) subjects = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" }; // --> so we can use an other if given or use the defult
             Trainer trainer = new Trainer();
             trainer.FirstName   = AskDetail("Give me your first name");
             trainer.LastName    = AskDetail("Give me your last name");
-            trainer.Subject     = AskDetail("Give me your subject you teach",subjects);
+            trainer.Subject     = AskDetail("Select me your subject you teach",subjects);
             return (trainer);
         }
-        public Course GetCourseDetails(List<string> subjects = null)
-        {
-            Course course = new Course();
-            return (course);
-        }
-
-        public Student GetStudentDetails(List<string> subjects = null) // --> check if we need to have list as a parameter
-        {
-            Student course = new Student();
-            return (course);
-        }
-
-        public Assignment GetAssignmentDetails(List<string> subjects = null)
-        {
-            Assignment assignment = new Assignment();
-            return (assignment);
-        }
-
-
+        
         private string AskDetail(string message, List<string> subjects = null) //--> null makes the AskDetails when used not to bring error or 
         {                                                                      //--> I whould need when using AskDetail passing null in the properties
             string result = "";
@@ -66,13 +48,18 @@ namespace IndividualProject.BusinessLogic
             {
                 Console.WriteLine($"{counter++}. {item}"); // --> test the counter                
             }
-            int choice = Convert.ToInt32(Console.ReadLine()); //!!!!!!!!
+            int choice = Int32.Parse(Console.ReadLine());
+
+            while (choice > elements.Count || choice <= 0)
+            {
+                Console.Write("Enter Correct selection: ");
+                choice = Convert.ToInt32(Console.ReadLine());
+            }
             result = elements.ElementAt(choice - 1);//elements[choice - 1];
             return (result);
         }
-        
 
-        public void PrintTrainersList(List<Trainer> trainers)
+        protected internal static void PrintTrainersList(List<Trainer> trainers)
         {
             foreach (var item in trainers)
             {
@@ -80,42 +67,79 @@ namespace IndividualProject.BusinessLogic
             }
         }
 
-        
+
         //-------------Course--------------------------
 
-        //public Course GetCourseDetails()
-        //{
-        //    Course course = new Course();
-        //    course.Title      = AskDetail("Give Course Title");  //--> uses the AskDetails from trainer
-        //    course.Stream     = AskDetail("Give Stream");
-        //    course.Type       = AskDetail("Give Type");
-        //    course.Start_Date = Convert.ToDateTime(AskDetail("Give Start Date"));  //--> comferm correct operation
-        //    course.End_Date   = Convert.ToDateTime(AskDetail("Give Start Date"));
-        //}
+        public Course GetCourseDetails(List<string> stream = null, List<string> type = null)
+        {
+            if (stream == null) stream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
+            if (type == null) type = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
 
-        ////-------------Student--------------------------
+            Course course = new Course();
+            course.TitleNumber = Convert.ToInt32(AskDetail("Give Coding Bootcamp No"));  //--> see if we can use smaller data value
+            course.Stream = AskDetail("Select Stream", stream);
+            course.Type = AskDetail("Select Type", type);
+            course.Start_Date = Convert.ToDateTime(AskDetail("Give Start Date"));  //--> confirm correct operation !!! FIX INPUT FORMAT
+            course.End_Date = Convert.ToDateTime(AskDetail("Give End Date"));
+            return (course);
+        }
 
-        //public Student GetStudentDetails()
-        //{
-        //    Student student = new Student();
-        //    student.FirstName    = AskDetail("Give me student first name");
-        //    student.LastName     = AskDetail("Give me student last name");
-        //    student.DateOfBerth  = Convert.ToDateTime(AskDetail("Give me student date of berth"));
-        //    student.TuitionFees  = Double.Parse(AskDetail("Give me student tuituin fees"));
-        //}
+        protected internal static void PrintCoursesList(List<Course> courses)
+        {
+            foreach (var item in courses)
+            {
+                Console.WriteLine(item);
+            }
+        }
 
-        
+        //---------------Student--------------------------
+
+        public Student GetStudentDetails(List<string> studentsStream = null, List<string> streamType = null)
+        {
+            if (studentsStream == null) studentsStream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
+            if (streamType == null) streamType = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
+            Student student = new Student();
+            student.FirstName = AskDetail("Give me student first name");
+            student.LastName = AskDetail("Give me student last name");
+            student.DateOfBirth = Convert.ToDateTime(AskDetail("Give me student date of birth"));
+            student.StudentStream = AskDetail("Select student Stream", studentsStream);
+            student.StreamType = AskDetail("Select student Stream Type", streamType);            
+            student.TuitionFees = Convert.ToDouble(AskDetail("Give me student tuituion fees"));
+            Console.Clear();
+            return (student);
+        }
+
+        protected internal static void PrintStudentsList(List<Student> students) //--> can i find a common value for the Classes so i can make one print methode for all
+        {
+            foreach (var item in students)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
 
         ////-------------Assignment--------------------------
 
-        //public Assignment GetAssignmentDetails()
-        //{
-        //    Assignment assignment = new Assignment();
-        //    assignment.Title        = AskDetail("Give me assigment title");
-        //    assignment.Description  = AskDetail("Give me description");
-        //    assignment.SubDateTime  = Convert.ToDateTime("Give submission date & time");
-        //    assignment.OralMark     = float.Parse(AskDetail("Give oral mark"));  //--> check float correct operation
-        //    assignment.TotalMark    = float.Parse(AskDetail("Give total mark"));
-        //}
+        
+        public Assignment GetAssignmentDetails()
+        {
+            Assignment assignment = new Assignment();
+            assignment.Title = AskDetail("Give me assigment title");
+            assignment.Description = AskDetail("Give me description");
+            assignment.SubDateTime = Convert.ToDateTime("Give submission date & time");
+            assignment.OralMark = float.Parse(AskDetail("Give oral mark"));  //--> check float correct operation
+            assignment.TotalMark = float.Parse(AskDetail("Give total mark"));
+            return (assignment);
+        }
+
+        protected internal static void PrintAssignmentsList(List<Assignment> assignments) 
+        {
+            foreach (var item in assignments)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        
     }
 }

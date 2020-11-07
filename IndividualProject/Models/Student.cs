@@ -11,6 +11,8 @@ namespace IndividualProject.Models
         private string _firstname;
         private string _lastname;
         private DateTime _dateofbirth;
+        private string _studentStream;
+        private string _streamType;
         private double _tuitionfees;
 
         public string FirstName
@@ -25,10 +27,24 @@ namespace IndividualProject.Models
             set { this._lastname = value; }
         }
         
-        public DateTime DateOfBerth
+        public DateTime DateOfBirth
         {
             get { return (this._dateofbirth); }
             set { this._dateofbirth = value; }  //-->date time format !!
+        }
+
+
+        public string StudentStream
+        {
+            get { return (this._studentStream); }
+            set { this._studentStream = value; }
+        }
+
+
+        public string StreamType
+        {
+            get { return (this._streamType); }
+            set { this._streamType = value; }
         }
 
         public double TuitionFees
@@ -37,9 +53,16 @@ namespace IndividualProject.Models
             set { this._tuitionfees = value; } // --> decimal formating
         }
 
+
+        //------------Enter viriable for course section!!!!!!!!
+
         public override string ToString()
         {
-            return ($"First Name: {_firstname}\tLast Name: {_lastname}\tDate of Berth: {_dateofbirth.ToString("dd/MM/yyyy")}\tTuition Fees: {_tuitionfees}");
+            return ($"First Name: {_firstname}" +
+                    $"\tLast Name: {_lastname}" +
+                    $"\tDate of Berth: {_dateofbirth.ToString("dd/MM/yyyy")}" +
+                    $"\tCourse: {_studentStream} {_streamType}"+
+                    $"\tTuition Fees: {_tuitionfees}");
         }
     }
 }

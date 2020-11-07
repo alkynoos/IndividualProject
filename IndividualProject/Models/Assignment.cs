@@ -44,7 +44,10 @@ namespace IndividualProject.Models
 
         public override string ToString()
         {
-            return ($"Title: {_title}\tDescription: {_description}\tSubmission Date & Time: {_subdatetime.ToString("dd/MM/yyyy HH:mm")}\tOral Mark: {_oralmark}\tTotal Mark: "); // --> date time check correct format
+            return ($"Title: {_title}" +
+                    $"\tDescription: {_description}" +
+                    $"\tSubmission Date & Time: {_subdatetime.ToString("dd/MM/yyyy HH:mm")}" +
+                    $"\tOral Mark: {_oralmark}\tTotal Mark: "); // --> date time check correct format
         }
     }
 }
