@@ -20,8 +20,8 @@ namespace IndividualProject.BusinessLogic
         }
         protected internal static void PrintListOfCSharpTrainer()
         {
-            List<Trainer> trainersInJava = List.trainers.FindAll(trainer => trainer.Subject == "C#");
-            foreach (var trainer in trainersInJava)
+            List<Trainer> trainersInCSharp = List.trainers.FindAll(trainer => trainer.Subject == "C#");
+            foreach (var trainer in trainersInCSharp)
             {
                 Console.WriteLine(trainer);
             }
@@ -36,16 +36,16 @@ namespace IndividualProject.BusinessLogic
         }
         protected internal static void PrintListOfJavaScriptTrainer()
         {
-            List<Trainer> trainersInJava = List.trainers.FindAll(trainer => trainer.Subject == "JavaScript");
-            foreach (var trainer in trainersInJava)
+            List<Trainer> trainersInPython = List.trainers.FindAll(trainer => trainer.Subject == "JavaScript");
+            foreach (var trainer in trainersInPython)
             {
                 Console.WriteLine(trainer);
             }
         }
         protected internal static void PrintListOfPHPTrainer()
         {
-            List<Trainer> trainersInJava = List.trainers.FindAll(trainer => trainer.Subject == "PHP");
-            foreach (var trainer in trainersInJava)
+            List<Trainer> trainersInPHP = List.trainers.FindAll(trainer => trainer.Subject == "PHP");
+            foreach (var trainer in trainersInPHP)
             {
                 Console.WriteLine(trainer);
             }

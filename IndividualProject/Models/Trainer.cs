@@ -12,6 +12,18 @@ namespace IndividualProject.Models
         private string _lastname;
         private string _subject;
 
+        public Trainer()
+        {
+
+        }
+
+        public Trainer(string FirstName,string LastName, string Subject)
+        {
+            this._firstname = FirstName;
+            this._lastname = LastName;
+            this._subject = Subject;
+        }
+
         public string FirstName
         {                                    // this gives as the ability to "set" a value from "outside" for private string firstName, 
            get { return (this._firstname); } //but when we "get" the value we can formated as we like from "inside"

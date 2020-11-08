@@ -31,7 +31,7 @@ namespace IndividualProject.BusinessLogic
 
         protected internal static void PrintListOfStudentsJavaInOnline()
         {
-            List<Student> studentsInJavaOnline = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Part Time");
+            List<Student> studentsInJavaOnline = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Online");
             foreach (var student in studentsInJavaOnline)
             {
                 Console.WriteLine(student);

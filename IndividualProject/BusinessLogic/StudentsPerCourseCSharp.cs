@@ -29,7 +29,7 @@ namespace IndividualProject.BusinessLogic
 
         protected internal static void PrintListOfStudentsInCSharpOnline()
         {
-            List<Student> studentsInCSharpOnline = List.students.FindAll(student => student.StudentStream == "C#" && student.StreamType == "Part Time");
+            List<Student> studentsInCSharpOnline = List.students.FindAll(student => student.StudentStream == "C#" && student.StreamType == "Online");
             foreach (var student in studentsInCSharpOnline)
             {
                 Console.WriteLine(student);

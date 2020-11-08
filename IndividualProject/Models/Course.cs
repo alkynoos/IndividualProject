@@ -14,6 +14,16 @@ namespace IndividualProject.Models
         private DateTime _start_date;
         private DateTime _end_date;
 
+        public Course(int TitleNumber, string Stream, string Type, DateTime Start_Date, DateTime End_Date)
+        {
+            this._titlenumber = TitleNumber;
+            this._stream = Stream;
+            this._type = Type;
+            this._start_date = Start_Date;
+            this._end_date = End_Date;
+
+        }
+
         public int TitleNumber
         {
             get { return (this._titlenumber); }

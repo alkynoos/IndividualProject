@@ -15,6 +15,20 @@ namespace IndividualProject.Models
         private string _streamType;
         private double _tuitionfees;
 
+        public Student()
+        {
+
+        }
+        public Student(string FirstName, string LastName, DateTime DateOfBirth, string StudentStream, string StreamType, double TuitionFees)
+        {
+            this._firstname = FirstName;
+            this._lastname = LastName;
+            this._dateofbirth = DateOfBirth;
+            this._studentStream = StudentStream;
+            this._streamType = StreamType;
+            this._tuitionfees = TuitionFees;
+        }
+
         public string FirstName
         {
             get { return (this._firstname); }
@@ -30,7 +44,7 @@ namespace IndividualProject.Models
         public DateTime DateOfBirth
         {
             get { return (this._dateofbirth); }
-            set { this._dateofbirth = value; }  //-->date time format !!
+            set { this._dateofbirth = value; } 
         }
 
 

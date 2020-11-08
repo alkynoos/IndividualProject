@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\AssignmentsCSharp.cs" />
+    <Compile Include="BusinessLogic\AssignmentsJava.cs" />
+    <Compile Include="BusinessLogic\AssignmentsJavaScript.cs" />
+    <Compile Include="BusinessLogic\AssignmentsPHP.cs" />
+    <Compile Include="BusinessLogic\AssignmentsPython.cs" />
     <Compile Include="BusinessLogic\CommandPromptUtils.cs" />
     <Compile Include="BusinessLogic\ConsoleMenu.cs" />
     <Compile Include="BusinessLogic\List.cs" />
@@ -50,6 +55,8 @@
     <Compile Include="BusinessLogic\StudentsPerCourseJava.cs" />
     <Compile Include="BusinessLogic\StudentsPerCourseJavaScript.cs" />
     <Compile Include="BusinessLogic\StudentsPerCoursePHP.cs" />
+    <Compile Include="BusinessLogic\StudentsPerCoursePython.cs" />
+    <Compile Include="BusinessLogic\SyntheticData.cs" />
     <Compile Include="BusinessLogic\TrainersPerCourse.cs" />
     <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Course.cs" />

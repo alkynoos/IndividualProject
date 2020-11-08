@@ -20,7 +20,7 @@ namespace IndividualProject.BusinessLogic
         //}
 
         protected internal static List<Trainer> trainers = new List<Trainer>();
-        protected internal static List<Course> courses = new List<Course>();  //--> Comfirm saving
+        protected internal static List<Course> courses = new List<Course>();  
         protected internal static List<Student> students = new List<Student>();
         protected internal static List<Assignment> assignments = new List<Assignment>();
 
@@ -39,8 +39,6 @@ namespace IndividualProject.BusinessLogic
             }
             //cpUtils.PrintTrainersList(trainers);
         }
-
-
         protected internal static void InputToCourseList()
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
@@ -65,7 +63,6 @@ namespace IndividualProject.BusinessLogic
             }
             //cpUtils.PrintStudentsList(students);
         }
-
         protected internal static void InputToAssignmentList()
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
@@ -80,12 +77,10 @@ namespace IndividualProject.BusinessLogic
             
         }
 
-        //protected internal static void CallAllTheInputs()
+        //public static List<Trainer> SyntheticDataTrainer()
         //{
-        //    //InputToTrainersList();
-        //    //InputToStudentList();
-        //    InputToCourseList();            
-        //    //InputToAssignmentList();
+        //    trainers.Add(new Trainer("Aadam", "English", "Java"));
+        //    return (trainers);
         //}
     }
 }

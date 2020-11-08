@@ -19,6 +19,7 @@ namespace IndividualProject.BusinessLogic
             trainer.FirstName   = AskDetail("Give me your first name");
             trainer.LastName    = AskDetail("Give me your last name");
             trainer.Subject     = AskDetail("Select me your subject you teach",subjects);
+            Console.Clear();
             return (trainer);
         }
         
@@ -81,6 +82,7 @@ namespace IndividualProject.BusinessLogic
             course.Type = AskDetail("Select Type", type);
             course.Start_Date = Convert.ToDateTime(AskDetail("Give Start Date"));  //--> confirm correct operation !!! FIX INPUT FORMAT
             course.End_Date = Convert.ToDateTime(AskDetail("Give End Date"));
+            Console.Clear();
             return (course);
         }
 
@@ -121,14 +123,19 @@ namespace IndividualProject.BusinessLogic
         ////-------------Assignment--------------------------
 
         
-        public Assignment GetAssignmentDetails()
+        public Assignment GetAssignmentDetails(List<string> assignmentStream = null, List<string> assignmentType = null)
         {
+            if (assignmentStream == null) assignmentStream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
+            if (assignmentType == null) assignmentType = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
             Assignment assignment = new Assignment();
+            assignment.AssignmentStream = AskDetail("Select assigment Stream", assignmentStream);
+            assignment.AssignmentType = AskDetail("Select assigment Stream Type", assignmentType);
             assignment.Title = AskDetail("Give me assigment title");
             assignment.Description = AskDetail("Give me description");
-            assignment.SubDateTime = Convert.ToDateTime("Give submission date & time");
+            assignment.SubDateTime = Convert.ToDateTime(AskDetail("Give submission date & time"));
             assignment.OralMark = float.Parse(AskDetail("Give oral mark"));  //--> check float correct operation
             assignment.TotalMark = float.Parse(AskDetail("Give total mark"));
+            Console.Clear();
             return (assignment);
         }
 
