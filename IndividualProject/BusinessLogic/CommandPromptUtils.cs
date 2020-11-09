@@ -125,7 +125,7 @@ namespace IndividualProject.BusinessLogic
         
         public Assignment GetAssignmentDetails(List<string> assignmentStream = null, List<string> assignmentType = null)
         {
-            if (assignmentStream == null) assignmentStream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
+            if (assignmentStream == null) assignmentStream = new List<string>() { "Java", "C#", "JavaScript", "PHP", "Python" };
             if (assignmentType == null) assignmentType = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
             Assignment assignment = new Assignment();
             assignment.AssignmentStream = AskDetail("Select assigment Stream", assignmentStream);
@@ -133,7 +133,7 @@ namespace IndividualProject.BusinessLogic
             assignment.Title = AskDetail("Give me assigment title");
             assignment.Description = AskDetail("Give me description");
             assignment.SubDateTime = Convert.ToDateTime(AskDetail("Give submission date & time"));
-            assignment.OralMark = float.Parse(AskDetail("Give oral mark"));  //--> check float correct operation
+            assignment.OralMark = float.Parse(AskDetail("Give oral mark"));  
             assignment.TotalMark = float.Parse(AskDetail("Give total mark"));
             Console.Clear();
             return (assignment);

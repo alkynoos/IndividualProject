@@ -10,14 +10,7 @@ namespace IndividualProject.BusinessLogic
 {
     class List
     {
-        //Try to gather the similar code in method
-
-        //public static CommandPromptUtils AskForInput(string message, out CommandPromptUtils cpUtils) 
-        //{
-        //    CommandPromptUtils cpUtils = new CommandPromptUtils();
-        //    Console.WriteLine($"Please write number of {message} to be inputed: ");
-        //    int Inputs = Int32.Parse(Console.ReadLine());
-        //}
+        
 
         protected internal static List<Trainer> trainers = new List<Trainer>();
         protected internal static List<Course> courses = new List<Course>();  
@@ -26,61 +19,88 @@ namespace IndividualProject.BusinessLogic
 
 
         protected internal static void InputToTrainersList()
-        {
-            //AskForInput("trainers");
-
+        {            
             CommandPromptUtils cpUtils = new CommandPromptUtils();
             Console.Write("Please write number of trainers to be inputed: ");
-            int trainerInputs = Int32.Parse(Console.ReadLine());
-            //List<Trainer> trainers = new List<Trainer>();
+            int trainerInputs = Int32.Parse(Console.ReadLine());            
             for (int i = 1; i <= trainerInputs; i++)
             {
                 trainers.Add(cpUtils.GetTrainerDetails());
-            }
-            //cpUtils.PrintTrainersList(trainers);
+            }            
         }
         protected internal static void InputToCourseList()
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
             Console.Write("Please write number of courses to be inputed: ");
-            int courseInputs = Int32.Parse(Console.ReadLine());
-            //List<Course> courses = new List<Course>();
+            int courseInputs = Int32.Parse(Console.ReadLine());            
             for (int i = 1; i <= courseInputs; i++)
             {
                 courses.Add(cpUtils.GetCourseDetails());
-            }
-            //cpUtils.PrintCoursesList(courses);
+            }            
         }
         protected internal static void InputToStudentList()
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
             Console.Write("Please write number of students to be inputed: ");
-            int studentInputs = Int32.Parse(Console.ReadLine());
-            //List<Student> students = new List<Student>();
+            int studentInputs = Int32.Parse(Console.ReadLine());            
             for (int i = 1; i <= studentInputs; i++)
             {
                 students.Add(cpUtils.GetStudentDetails());
-            }
-            //cpUtils.PrintStudentsList(students);
+            }            
         }
         protected internal static void InputToAssignmentList()
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
             Console.Write("Please write number of assignments to be inputed: ");
-            int assignmentInputs = Int32.Parse(Console.ReadLine());
-            //List<Assignment> assignments = new List<Assignment>();
+            int assignmentInputs = Int32.Parse(Console.ReadLine());            
             for (int i = 1; i <= assignmentInputs; i++)
             {
                 assignments.Add(cpUtils.GetAssignmentDetails());
-            }
-            //cpUtils.PrintAssignmentsList(assignments);
-            
+            }           
         }
 
-        //public static List<Trainer> SyntheticDataTrainer()
-        //{
-        //    trainers.Add(new Trainer("Aadam", "English", "Java"));
-        //    return (trainers);
-        //}
+        protected internal static void StudentAssignments()
+        {
+            //foreach (var student in students)
+            //{
+            //    Console.WriteLine(student);
+
+            //    foreach (var assignment in assignments)
+            //    {
+
+            //        if (student.StudentStream.Equals("Java") && assignment.AssignmentStream.Equals("Java") && student.StreamType.Equals("Full Time") && assignment.AssignmentType.Equals("Full Time"))
+            //        {
+                        
+
+            //            Console.WriteLine($"Student {student.FirstName} {student.LastName} " +
+            //                              $"\nhas the Assignment {assignment.Title} {assignment.Description} " +
+            //                              $"\nthat is due for {assignment.SubDateTime}");
+            //            Console.WriteLine("-----------------------------------------------------------------------------------");
+            //        }
+            //        else
+            //        {
+            //            continue;
+            //        }
+            //    }
+            //}
+
+            for (int i = 0; i < students.Count; i++)
+            {
+                for (int j = 0; j < assignments.Count; j++)
+                {
+                    if (students[i].StudentStream.Equals(assignments[j].AssignmentStream) && students[i].StreamType.Equals(assignments[j].AssignmentType))
+                    {
+                        Console.WriteLine("im in");
+
+                        //Console.WriteLine($"Student {students[i].FirstName} {students[i].LastName} " +
+                        //                  $"\nhas the Assignment {assignments[j].Title} {assignments[j].Description} " +
+                        //                  $"\nthat is due for {assignments[j].SubDateTime}");
+                        //Console.WriteLine("-----------------------------------------------------------------------------------");
+                    }
+                }
+            }
+        }
+
+
     }
 }

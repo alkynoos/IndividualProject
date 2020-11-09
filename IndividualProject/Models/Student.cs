@@ -64,11 +64,11 @@ namespace IndividualProject.Models
         public double TuitionFees
         {
             get { return (this._tuitionfees); }
-            set { this._tuitionfees = value; } // --> decimal formating
+            set { this._tuitionfees = value; } 
         }
 
 
-        //------------Enter viriable for course section!!!!!!!!
+        
 
         public override string ToString()
         {

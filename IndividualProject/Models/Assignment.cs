@@ -32,11 +32,7 @@ namespace IndividualProject.Models
             this._totalmark = TotalMark;
         }
 
-        public string Title
-        {
-            get { return (this._title); }
-            set { this._title = value; }
-        }
+        
 
         
         public string AssignmentStream
@@ -51,6 +47,11 @@ namespace IndividualProject.Models
             set { this._assignmentStream = value; }
         }
 
+        public string Title
+        {
+            get { return (this._title); }
+            set { this._title = value; }
+        }
 
         public string Description
         {
@@ -77,7 +78,8 @@ namespace IndividualProject.Models
 
         public override string ToString()
         {
-            return ($"Title: {_title}" +
+            return ($"Assignment Stream: {_assignmentStream} {_assignmentType}" +
+                    $"\tTitle: {_title}" +
                     $"\tDescription: {_description}" +
                     $"\tSubmission Date & Time: {_subdatetime.ToString("dd/MM/yyyy HH:mm")}" +
                     $"\tOral Mark: {_oralmark.ToString("0.00")}\tTotal Mark: {_totalmark.ToString("0.00")}"); 

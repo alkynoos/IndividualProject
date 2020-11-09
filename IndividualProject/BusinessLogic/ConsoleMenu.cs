@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+
 namespace IndividualProject.BusinessLogic
 {
     class ConsoleMenu
@@ -13,12 +14,13 @@ namespace IndividualProject.BusinessLogic
         protected internal static void Menu()
         {
             Console.WriteLine("Choose Action: ");
-            Console.WriteLine("1) Input Data Menu.");
-            Console.WriteLine("2) Print Input Lists Menu.");
-            Console.WriteLine("3) Print Students Per Course Menu.");
-            Console.WriteLine("4) Print Trainers Per Course Menu.");
-            //Console.WriteLine("5) Continue without inputs.");
-            Console.WriteLine("6) Exit .");
+            Console.WriteLine("1) Input Data.");
+            Console.WriteLine("2) Print Input Lists.");
+            Console.WriteLine("3) Print Students Per Course.");
+            Console.WriteLine("4) Print Trainers Per Course.");
+            Console.WriteLine("5) Print Assingnments Per Course.");
+            Console.WriteLine("6) Print Students with there Assingnments.");
+            Console.WriteLine("7) Exit.");
 
             ConsoleKeyInfo menuSelection;
             menuSelection = Console.ReadKey(true);
@@ -27,7 +29,7 @@ namespace IndividualProject.BusinessLogic
             {
                 case '1':
                     Console.Clear();
-                    Console.WriteLine("Input Data Menu.");
+                    Console.WriteLine("Input Data.");
                     InputDataMenu();
                     Console.ReadKey();
                     Console.Clear();
@@ -35,9 +37,10 @@ namespace IndividualProject.BusinessLogic
                     break;
                 case '2':
                     Console.Clear();
-                    Console.WriteLine("Print Input Lists Menu.");
+                    Console.WriteLine("Print Input Lists.");
                     PrintInputListsMenu();
                     Console.ReadKey();
+                    Console.Clear();
                     break;
                 case '3':
                     Console.Clear();
@@ -49,22 +52,31 @@ namespace IndividualProject.BusinessLogic
                     break;
                 case '4':
                     Console.Clear();
-                    Console.WriteLine("Print Trainers Per Course Menu.");
+                    Console.WriteLine("Print Trainers Per Course.");
                     PrintTrainersPerCourse();
                     Console.ReadKey();
                     Console.Clear();
                     Menu();
                     break;
-                //case '5':
-                //    Console.Clear();
-                //    Console.WriteLine("Greating a lists with sythetic data ");
-                //    Console.ReadKey();
-                //    Console.Clear();
-                //    Menu();
-                //    break;
-                case '6':                    
-                    Environment.Exit(0);
-                    
+                case '5':
+                    Console.Clear();
+                    Console.WriteLine("Print Assingnments Per Course.");
+                    PrintAssignmentsPerCourse();
+                    Console.ReadKey();
+                    Console.Clear();
+                    Menu();
+                    break;
+                case '6':
+                    Console.Clear();
+                    Console.WriteLine("Print Students with there Assingnments.");
+                    //List.StudentAssignments(); //--> Need to be build
+                    StudentsPerCourseJava.GiveStudentAssignmentInJavaFullTime(AssignmentsJava.assignmentInJavaFullTime);
+                    Console.ReadKey();
+                    Console.Clear();
+                    Menu();
+                    break;
+                case '7':                    
+                    Environment.Exit(0);                    
                     break;
             }
 
@@ -98,6 +110,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Greating a list of Course.");
                     List.InputToCourseList();
                     Console.ReadKey();
+                    Console.Clear();
                     break;
                 case '3':
                     Console.Clear();
@@ -118,9 +131,7 @@ namespace IndividualProject.BusinessLogic
                 case '5':
                     Console.Clear();
                     Console.WriteLine("Greating a lists with sythetic data. ");
-                    SyntheticData.SyntheticDataTrainer();
-                    SyntheticData.SyntheticDataStudent();
-                    SyntheticData.SyntheticDataAssignment();
+                    SyntheticData.SendSyntheticDataToMemu();
                     Console.ReadKey();
                     Console.Clear();
                     InputDataMenu();
@@ -164,6 +175,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of Course.");
                     CommandPromptUtils.PrintCoursesList(List.courses);
                     Console.ReadKey();
+                    Console.Clear();
                     PrintInputListsMenu();
                     break;
                 case '3':
@@ -224,6 +236,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of C# Students.");
                     PrintStudentsOfCSharp();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintStudentsPerCourse();
                     break;
                 case '3':
@@ -289,6 +302,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of Java Part Time Students.");
                     StudentsPerCourseJava.PrintListOfStudentsInJavaPartTime();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintStudentsOfJava();
                     break;
                 case '3':
@@ -354,6 +368,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of C# Part Time Students.");
                     StudentsPerCourseCSharp.PrintListOfStudentsInCSharpPartTime();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintStudentsOfCSharp();
                     break;
                 case '3':
@@ -419,6 +434,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of JavaScript Part Time Students.");
                     StudentsPerCourseJavaScript.PrintListOfStudentsInJavaScriptPartTime();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintStudentsOfJavaScript();
                     break;
                 case '3':
@@ -484,6 +500,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of PHP Part Time Students.");
                     StudentsPerCoursePHP.PrintListOfStudentsInPHPPartTime();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintStudentsOfPHP();
                     break;
                 case '3':
@@ -549,6 +566,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of Python Part Time Students.");
                     StudentsPerCoursePython.PrintListOfStudentsInPythonPartTime();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintStudentsOfPython();
                     break;
                 case '3':
@@ -616,6 +634,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of C# Trainers.");
                     TrainersPerCourse.PrintListOfCSharpTrainer();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintTrainersPerCourse();
                     break;
                 case '3':
@@ -655,7 +674,7 @@ namespace IndividualProject.BusinessLogic
 
         protected internal static void PrintAssignmentsPerCourse()
         {
-            Console.WriteLine("Choose Action: ");
+            Console.WriteLine("Choose Assignments Per Course: ");
             Console.WriteLine("1) Java.");
             Console.WriteLine("2) C# .");
             Console.WriteLine("3) JavaScript.");
@@ -675,14 +694,15 @@ namespace IndividualProject.BusinessLogic
                     PrintAssignmentsOfJava();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintStudentsPerCourse();
+                    PrintAssignmentsPerCourse();
                     break;
                 case '2':
                     Console.Clear();
                     Console.WriteLine("C# Assignments.");
                     PrintAssignmentsOfCSharp();
                     Console.ReadKey();
-                    PrintStudentsPerCourse();
+                    Console.Clear();
+                    PrintAssignmentsPerCourse();
                     break;
                 case '3':
                     Console.Clear();
@@ -690,7 +710,7 @@ namespace IndividualProject.BusinessLogic
                     PrintAssignmentsOfJavaScript();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintStudentsPerCourse();
+                    PrintAssignmentsPerCourse();
                     break;
                 case '4':
                     Console.Clear();
@@ -698,7 +718,7 @@ namespace IndividualProject.BusinessLogic
                     PrintAssignmentsOfJavaScript();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintStudentsPerCourse();
+                    PrintAssignmentsPerCourse();
                     break;
                 case '5':
                     Console.Clear();
@@ -706,6 +726,7 @@ namespace IndividualProject.BusinessLogic
                     PrintAssignmentsOfPHP();
                     Console.ReadKey();
                     Console.Clear();
+                    PrintAssignmentsPerCourse();
                     break;
                 case '6':
                     Console.Clear();
@@ -719,7 +740,7 @@ namespace IndividualProject.BusinessLogic
         }
         protected internal static void PrintAssignmentsOfJava()
         {
-            Console.WriteLine("Choose Action: ");
+            Console.WriteLine("Choose Assignments Of Java: ");
             Console.WriteLine("1) Full Time.");
             Console.WriteLine("2) Part Time.");
             Console.WriteLine("3) Online. ");
@@ -739,14 +760,15 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJava.PrintListOfAssignmentInJavaFullTime();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintStudentsOfJava();
+                    PrintAssignmentsOfJava();
                     break;
                 case '2':
                     Console.Clear();
                     Console.WriteLine("Printing the list of Java Part Time Assignments.");
                     AssignmentsJava.PrintListOfAssignmentInJavaPartTime();
                     Console.ReadKey();
-                    PrintStudentsOfJava();
+                    Console.Clear();
+                    PrintAssignmentsOfJava();
                     break;
                 case '3':
                     Console.Clear();
@@ -754,7 +776,7 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJava.PrintListOfAssignmentInJavaOnline();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintStudentsOfJava();
+                    PrintAssignmentsOfJava();
                     break;
                 case '4':
                     Console.Clear();
@@ -762,7 +784,7 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJava.PrintListOfAssignmentInJavaHybridFullTime();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintStudentsOfJava();
+                    PrintAssignmentsOfJava();
                     break;
                 case '5':
                     Console.Clear();
@@ -770,7 +792,7 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJava.PrintListOfAssignmentInJavaHybridPartTime();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintStudentsOfJava();
+                    PrintAssignmentsOfJava();
                     break;
                 case '6':
                     Console.Clear();
@@ -784,7 +806,7 @@ namespace IndividualProject.BusinessLogic
         }
         protected internal static void PrintAssignmentsOfCSharp()
         {
-            Console.WriteLine("Choose Action: ");
+            Console.WriteLine("Choose Assignments Of C#: ");
             Console.WriteLine("1) Full Time.");
             Console.WriteLine("2) Part Time.");
             Console.WriteLine("3) Online. ");
@@ -811,6 +833,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of C# Part Time Assignments.");
                     AssignmentsCSharp.PrintListOfAssignmentInCSharpPartTime();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintAssignmentsOfCSharp();
                     break;
                 case '3':
@@ -849,7 +872,7 @@ namespace IndividualProject.BusinessLogic
         }
         protected internal static void PrintAssignmentsOfJavaScript()
         {
-            Console.WriteLine("Choose Action: ");
+            Console.WriteLine("Choose Assignments Of JavaScript: ");
             Console.WriteLine("1) Full Time.");
             Console.WriteLine("2) Part Time.");
             Console.WriteLine("3) Online. ");
@@ -869,14 +892,15 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJavaScript.PrintListOfAssignmentInJavaScriptFullTime();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintAssignmentsPerCourse();
+                    PrintAssignmentsOfJavaScript();
                     break;
                 case '2':
                     Console.Clear();
                     Console.WriteLine("Printing the list of JavaScript Part Time Assignments.");
                     AssignmentsJavaScript.PrintListOfAssignmentInJavaScriptPartTime();
                     Console.ReadKey();
-                    PrintAssignmentsPerCourse();
+                    Console.Clear();
+                    PrintAssignmentsOfJavaScript();
                     break;
                 case '3':
                     Console.Clear();
@@ -884,7 +908,7 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJavaScript.PrintListOfAssignmentInJavaScriptOnline();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintAssignmentsPerCourse();
+                    PrintAssignmentsOfJavaScript();
                     break;
                 case '4':
                     Console.Clear();
@@ -892,7 +916,7 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJavaScript.PrintListOfAssignmentInJavaScriptHybridFullTime();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintAssignmentsPerCourse();
+                    PrintAssignmentsOfJavaScript();
                     break;
                 case '5':
                     Console.Clear();
@@ -900,7 +924,7 @@ namespace IndividualProject.BusinessLogic
                     AssignmentsJavaScript.PrintListOfAssignmentInJavaScriptHybridPartTime();
                     Console.ReadKey();
                     Console.Clear();
-                    PrintAssignmentsPerCourse();
+                    PrintAssignmentsOfJavaScript();
                     break;
                 case '6':
                     Console.Clear();
@@ -914,7 +938,7 @@ namespace IndividualProject.BusinessLogic
         }
         protected internal static void PrintAssignmentsOfPHP()
         {
-            Console.WriteLine("Choose Action: ");
+            Console.WriteLine("Choose Assignments Of PHP: ");
             Console.WriteLine("1) Full Time.");
             Console.WriteLine("2) Part Time.");
             Console.WriteLine("3) Online. ");
@@ -941,6 +965,7 @@ namespace IndividualProject.BusinessLogic
                     Console.WriteLine("Printing the list of PHP Part Time Assignments.");
                     AssignmentsPHP.PrintListOfAssignmentInPHPPartTime();
                     Console.ReadKey();
+                    Console.Clear();
                     PrintAssignmentsOfPHP();
                     break;
                 case '3':
@@ -979,7 +1004,7 @@ namespace IndividualProject.BusinessLogic
         }
         protected internal static void PrintAssignmentsOfPython()
         {
-            Console.WriteLine("Choose Action: ");
+            Console.WriteLine("Choose Assignments Of Python: ");
             Console.WriteLine("1) Full Time.");
             Console.WriteLine("2) Part Time.");
             Console.WriteLine("3) Online. ");

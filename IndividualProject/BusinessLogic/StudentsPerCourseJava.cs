@@ -7,22 +7,23 @@ using System.Threading.Tasks;
 
 namespace IndividualProject.BusinessLogic
 {
-    class StudentsPerCourseJava
+    class StudentsPerCourseJava 
     {
-       
+        protected internal static List<Student> studentsInJavaFullTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Full Time");
 
         protected internal static void PrintListOfStudentsInJavaFullTime()
         {
-            List<Student> studentsInJavaFullTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Full Time");
+            //List<Student> studentsInJavaFullTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Full Time");
             foreach (var student in studentsInJavaFullTime)
             {
                 Console.WriteLine(student);
             }
         }
 
+        protected internal static List<Student> studentsInJavaPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Part Time");
         protected internal static void PrintListOfStudentsInJavaPartTime()
         {
-            List<Student> studentsInJavaPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Part Time");
+            //List<Student> studentsInJavaPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Part Time");
             foreach (var student in studentsInJavaPartTime)
             {
                 Console.WriteLine(student);
@@ -53,6 +54,21 @@ namespace IndividualProject.BusinessLogic
             foreach (var student in studentsInJavaHybridPartTime)
             {
                 Console.WriteLine(student);
+            }
+        }
+
+        protected internal static void GiveStudentAssignmentInJavaFullTime(List<Assignment> assignments)
+        {
+            foreach (var student in studentsInJavaFullTime)
+            {
+                Console.WriteLine("*********************************************************");
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+                foreach (var assingment in assignments)
+                {
+                    Console.WriteLine(assingment);
+                }
+                //Console.WriteLine(assignments.ToString());
+                Console.WriteLine("*********************************************************");
             }
         }
     }

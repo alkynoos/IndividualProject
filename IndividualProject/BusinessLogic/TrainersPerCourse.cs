@@ -26,18 +26,11 @@ namespace IndividualProject.BusinessLogic
                 Console.WriteLine(trainer);
             }
         }
-        protected internal static void PrintListOfPythonTrainer()
-        {
-            List<Trainer> trainersInJava = List.trainers.FindAll(trainer => trainer.Subject == "Python");
-            foreach (var trainer in trainersInJava)
-            {
-                Console.WriteLine(trainer);
-            }
-        }
+        
         protected internal static void PrintListOfJavaScriptTrainer()
         {
-            List<Trainer> trainersInPython = List.trainers.FindAll(trainer => trainer.Subject == "JavaScript");
-            foreach (var trainer in trainersInPython)
+            List<Trainer> trainersInJavaScript = List.trainers.FindAll(trainer => trainer.Subject == "JavaScript");
+            foreach (var trainer in trainersInJavaScript)
             {
                 Console.WriteLine(trainer);
             }
@@ -46,6 +39,14 @@ namespace IndividualProject.BusinessLogic
         {
             List<Trainer> trainersInPHP = List.trainers.FindAll(trainer => trainer.Subject == "PHP");
             foreach (var trainer in trainersInPHP)
+            {
+                Console.WriteLine(trainer);
+            }
+        }
+        protected internal static void PrintListOfPythonTrainer()
+        {
+            List<Trainer> trainersInPython = List.trainers.FindAll(trainer => trainer.Subject == "Python");
+            foreach (var trainer in trainersInPython)
             {
                 Console.WriteLine(trainer);
             }

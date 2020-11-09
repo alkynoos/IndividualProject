@@ -12,7 +12,33 @@ namespace IndividualProject
     {
         static void Main(string[] args)
         {
-            ConsoleMenu.Menu();
+            //ConsoleMenu.Menu();
+
+            SyntheticData.SendSyntheticDataToMemu();
+
+            Console.ReadLine();
+
+            CommandPromptUtils.PrintTrainersList(List.trainers);
+
+            Console.ReadLine();
+            Console.Clear();
+
+            CommandPromptUtils.PrintAssignmentsList(List.assignments);
+
+            Console.ReadLine();
+            Console.Clear();
+
+            AssignmentsJava.PrintListOfAssignmentInJavaFullTime();
+
+
+
+
+
+
+
+
+
+
 
 
             //List.CallAllTheInputs();

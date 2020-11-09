@@ -13,7 +13,10 @@ namespace IndividualProject.Models
         private string _type;
         private DateTime _start_date;
         private DateTime _end_date;
+        public Course()
+        {
 
+        }
         public Course(int TitleNumber, string Stream, string Type, DateTime Start_Date, DateTime End_Date)
         {
             this._titlenumber = TitleNumber;
