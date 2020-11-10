@@ -57,6 +57,7 @@
     <Compile Include="BusinessLogic\CommandPromptUtils.cs" />
     <Compile Include="BusinessLogic\ConsoleMenu.cs" />
     <Compile Include="BusinessLogic\List.cs" />
+    <Compile Include="BusinessLogic\StudentsInMoreCourses.cs" />
     <Compile Include="BusinessLogic\StudentsPerCourseCSharp.cs" />
     <Compile Include="BusinessLogic\StudentsPerCourseJava.cs" />
     <Compile Include="BusinessLogic\StudentsPerCourseJavaScript.cs" />

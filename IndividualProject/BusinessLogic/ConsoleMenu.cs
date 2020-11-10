@@ -20,7 +20,8 @@ namespace IndividualProject.BusinessLogic
             Console.WriteLine("4) Print Trainers Per Course.");
             Console.WriteLine("5) Print Assingnments Per Course.");
             Console.WriteLine("6) Print Students with there Assingnments.");
-            Console.WriteLine("7) Exit.");
+            Console.WriteLine("7) Print Students in more then one course.");
+            Console.WriteLine("8) Exit.");
 
             ConsoleKeyInfo menuSelection;
             menuSelection = Console.ReadKey(true);
@@ -69,13 +70,20 @@ namespace IndividualProject.BusinessLogic
                 case '6':
                     Console.Clear();
                     Console.WriteLine("Print Students with there Assingnments.");
-                    //List.StudentAssignments(); //--> Need to be build
-                    StudentsPerCourseJava.GiveStudentAssignmentInJavaFullTime(AssignmentsJava.assignmentInJavaFullTime);
+                    //StudentsPerCourseJava.GiveStudentAssignmentInJavaFullTime(); Under Construction
                     Console.ReadKey();
                     Console.Clear();
                     Menu();
                     break;
-                case '7':                    
+                case '7':
+                    Console.Clear();
+                    Console.WriteLine("Print Students in more then one course.");
+                    StudentsInMoreCourses.ReturnStudentsInMoreCourses();
+                    Console.ReadKey();
+                    Console.Clear();
+                    Menu();
+                    break;
+                case '8':                    
                     Environment.Exit(0);                    
                     break;
             }

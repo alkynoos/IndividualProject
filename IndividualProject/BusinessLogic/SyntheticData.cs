@@ -56,7 +56,7 @@ namespace IndividualProject.BusinessLogic
             List.students.Add(new Student("Frankie", "Regan", Convert.ToDateTime("15/12/1997"), "JavaScript", "Full Time", 2500));
             List.students.Add(new Student("Pawel", "Davey", Convert.ToDateTime("18/02/2000"), "JavaScript", "Part Time", 2250));
             List.students.Add(new Student("Grace", "Keeling", Convert.ToDateTime("16/03/1993"), "JavaScript", "Online", 2250));
-            List.students.Add(new Student("Xena", "Seymour", Convert.ToDateTime("01/03/1987"), "JavaScript", "Hybrid Full Time", 2500));
+            List.students.Add(new Student("Francesco", "Chaney", Convert.ToDateTime("15/01/1996"), "JavaScript", "Hybrid Full Time", 2500));
             List.students.Add(new Student("April", "Sadler", Convert.ToDateTime("13/10/1986"), "JavaScript", "Hybrid Part Time", 2150));
             List.students.Add(new Student("Madihah  ", "Whyte", Convert.ToDateTime("05/01/1985"), "PHP", "Full Time", 2500));
             List.students.Add(new Student("Erica", "Webster", Convert.ToDateTime("03/02/2000"), "PHP", "Part Time", 2250));
@@ -66,7 +66,7 @@ namespace IndividualProject.BusinessLogic
             List.students.Add(new Student("Thiago", "Santos", Convert.ToDateTime("29/12/1988"), "PHP", "Full Time", 2500));
             List.students.Add(new Student("Kobe", "Dyer", Convert.ToDateTime("28/12/1984"), "PHP", "Part Time", 2250));
             List.students.Add(new Student("Khadijah", "Burton", Convert.ToDateTime("11/09/1983"), "PHP", "Online", 2250));
-            List.students.Add(new Student("Anisha", "Murillo", Convert.ToDateTime("04/07/1993"), "PHP", "Hybrid Full Time", 2500));
+            List.students.Add(new Student("Nana", "Markham", Convert.ToDateTime("15/04/1996"), "PHP", "Hybrid Full Time", 2500));
             List.students.Add(new Student("Atlanta", "Marriott", Convert.ToDateTime("13/11/2001"), "PHP", "Hybrid Part Time", 2150));
             List.students.Add(new Student("Macie", "Brandt", Convert.ToDateTime("12/11/1986"), "Python", "Full Time", 2500));
             List.students.Add(new Student("Tayyibah", "English", Convert.ToDateTime("07/02/1989"), "Python", "Part Time", 2250));
@@ -75,7 +75,7 @@ namespace IndividualProject.BusinessLogic
             List.students.Add(new Student("Victor", "Schaefer", Convert.ToDateTime("29/06/1995"), "Python", "Hybrid Part Time", 2150));
             List.students.Add(new Student("Ria", "Obrien", Convert.ToDateTime("30/01/1991"), "Python", "Full Time", 2500));
             List.students.Add(new Student("Usmaan", "Leblanc", Convert.ToDateTime("01/09/1987"), "Python", "Part Time", 2250));
-            List.students.Add(new Student("Dianne", "Mcfarland", Convert.ToDateTime("11/04/1983"), "Python", "Online", 2250));
+            List.students.Add(new Student("Pawel", "Davey", Convert.ToDateTime("18/02/2000"), "Python", "Online", 2250));
             List.students.Add(new Student("Kenneth", "Watts", Convert.ToDateTime("24/08/2000"), "Python", "Hybrid Full Time", 2500));
             List.students.Add(new Student("Jed", "Howarth", Convert.ToDateTime("23/12/1997"), "Python", "Hybrid Part Time", 2150));
             return (List.students);
@@ -83,41 +83,41 @@ namespace IndividualProject.BusinessLogic
 
         protected internal static List<Assignment> SyntheticDataAssignment() 
         {
-            List.assignments.Add(new Assignment("Java", "Full Time",        "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Java", "Part Time",        "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Java", "Online",           "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Java", "Hybrid Full Time", "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Java", "Hybrid Part Time", "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("Java", "Full Time",        "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Java", "Part Time",        "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Java", "Online",           "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Java", "Hybrid Full Time", "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Java", "Hybrid Part Time", "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 5.5f, 4.5f));
 
-            List.assignments.Add(new Assignment("C#", "Full Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("C#", "Part Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("C#", "Online",             "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("C#", "Hybrid Full Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("C#", "Hybrid Part Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("C#", "Full Time",          "Personal Project 1", "Hotel Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("C#", "Part Time",          "Personal Project 1", "Hotel Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("C#", "Online",             "Personal Project 1", "Hotel Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("C#", "Hybrid Full Time",   "Personal Project 1", "Hotel Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("C#", "Hybrid Part Time",   "Personal Project 1", "Hotel Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.5f));
 
-            List.assignments.Add(new Assignment("JavaScript", "Full Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Part Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Online",             "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Hybrid Full Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Hybrid Part Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("JavaScript", "Full Time",          "Personal Project 1", "Travel Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("JavaScript", "Part Time",          "Personal Project 1", "Travel Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("JavaScript", "Online",             "Personal Project 1", "Travel Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("JavaScript", "Hybrid Full Time",   "Personal Project 1", "Travel Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("JavaScript", "Hybrid Part Time",   "Personal Project 1", "Travel Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
 
-            List.assignments.Add(new Assignment("JavaScript", "Full Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Part Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Online",             "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Hybrid Full Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("JavaScript", "Hybrid Part Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("JavaScript", "Full Time",          "Personal Project 1", "Taxi Company Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("JavaScript", "Part Time",          "Personal Project 1", "Taxi Company Managing App", Convert.ToDateTime("15/12/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("JavaScript", "Online",             "Personal Project 1", "Taxi Company Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("JavaScript", "Hybrid Full Time",   "Personal Project 1", "Taxi Company Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("JavaScript", "Hybrid Part Time",   "Personal Project 1", "Taxi Company Managing App", Convert.ToDateTime("15/12/2020"), 5.5f, 4.5f));
 
-            List.assignments.Add(new Assignment("PHP", "Full Time",         "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("PHP", "Part Time",         "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("PHP", "Online",            "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("PHP", "Hybrid Full Time",  "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("PHP", "Hybrid Part Time",  "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("PHP", "Full Time",         "Personal Project 1", "Employee Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("PHP", "Part Time",         "Personal Project 1", "Employee Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("PHP", "Online",            "Personal Project 1", "Employee Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("PHP", "Hybrid Full Time",  "Personal Project 1", "Employee Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.5f));
+            List.assignments.Add(new Assignment("PHP", "Hybrid Part Time",  "Personal Project 1", "Employee Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.5f));
 
-            List.assignments.Add(new Assignment("Python", "Full Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Python", "Part Time",          "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Python", "Online",             "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Python", "Hybrid Full Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("10/11/2020"), 4.5f, 5.1f));
-            List.assignments.Add(new Assignment("Python", "Hybrid Part Time",   "Personal Project 1", "Scool Managing App", Convert.ToDateTime("15/12/2020"), 4.5f, 5.1f));
+            List.assignments.Add(new Assignment("Python", "Full Time",          "Personal Project 1", "Ship Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Python", "Part Time",          "Personal Project 1", "Ship Managing App", Convert.ToDateTime("15/12/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Python", "Online",             "Personal Project 1", "Ship Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Python", "Hybrid Full Time",   "Personal Project 1", "Ship Managing App", Convert.ToDateTime("10/11/2020"), 5.5f, 4.5f));
+            List.assignments.Add(new Assignment("Python", "Hybrid Part Time",   "Personal Project 1", "Ship Managing App", Convert.ToDateTime("15/12/2020"), 5.5f, 4.5f));
 
             return (List.assignments);
         }
@@ -164,5 +164,6 @@ namespace IndividualProject.BusinessLogic
             SyntheticDataAssignment();
             SyntheticDataCourse();
         }
-    }
+    }      
+    
 }

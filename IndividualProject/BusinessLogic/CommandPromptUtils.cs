@@ -1,7 +1,7 @@
 ﻿using IndividualProject.Models;
 using Microsoft.SqlServer.Server;
 using Microsoft.Win32.SafeHandles;
-using System;
+using System; 
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -75,7 +75,6 @@ namespace IndividualProject.BusinessLogic
         {
             if (stream == null) stream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
             if (type == null) type = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
-
             Course course = new Course();
             course.TitleNumber = Convert.ToInt32(AskDetail("Give Coding Bootcamp No"));  //--> see if we can use smaller data value
             course.Stream = AskDetail("Select Stream", stream);
@@ -85,6 +84,7 @@ namespace IndividualProject.BusinessLogic
             Console.Clear();
             return (course);
         }
+
 
         protected internal static void PrintCoursesList(List<Course> courses)
         {
@@ -147,6 +147,27 @@ namespace IndividualProject.BusinessLogic
             }
         }
 
-        
+
+        //private string AskDetail(string message, List<string> subjects = null) //--> null makes the AskDetails when used not to bring error or 
+        //{                                                                      //--> I whould need when using AskDetail passing null in the properties
+        //    string result = "";
+        //    int subjectCount = subjects.Count();
+        //    Console.Write(message + ": ");
+        //    do
+        //    {
+        //        if (subjects != null)
+        //        {
+        //            //ask for the subject the trainer teaches
+        //            result = SelectFromListOfStrings(subjects);
+        //        }
+        //        else
+        //        {
+        //            result = Console.ReadLine();
+        //        }
+        //    } while (0 < Int32.Parse(result) && Int32.Parse(result) >= subjectCount);
+
+
+        //    return (result);
+        //}
     }
 }
