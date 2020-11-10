@@ -14,22 +14,66 @@ namespace IndividualProject
         {
             //ConsoleMenu.Menu();
 
+
+            Console.WriteLine("Testing");
+            Console.WriteLine("populating the lists with data");
             SyntheticData.SendSyntheticDataToMemu();
 
             Console.ReadLine();
 
+            Console.WriteLine("print other list to confirm list contain objects");
             CommandPromptUtils.PrintTrainersList(List.trainers);
 
             Console.ReadLine();
             Console.Clear();
 
+            Console.WriteLine("Print the full assignments list");
             CommandPromptUtils.PrintAssignmentsList(List.assignments);
 
             Console.ReadLine();
             Console.Clear();
 
+            Console.WriteLine("using the method");
             AssignmentsJava.PrintListOfAssignmentInJavaFullTime();
 
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("Callign .FindAll Direct at Main");
+            List<Assignment> helloThere = new List<Assignment>(List.assignments.FindAll(x => x.AssignmentStream.Equals("Java") && x.AssignmentType.Equals("Full Time")));
+
+
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("Using for loop at Main");
+
+            if (List.assignments.Count != 0)
+            {
+                for (int i = 0; i < List.assignments.Count; i++)
+                {
+                    if ((List.assignments[i].AssignmentStream.Equals("Java")) && (List.assignments[i].AssignmentType.Equals("Full Time")))
+                    {
+                        AssignmentsJava.assignmentInJavaFullTime.Add(List.assignments[i]);
+                    }
+                }
+                foreach (var assignment in AssignmentsJava.assignmentInJavaFullTime)
+                {
+                    Console.WriteLine(assignment);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No entry found");
+            }
+
+            Console.ReadLine();
+            Console.Clear();
+
+
+
+            Console.WriteLine("trying with other lesson");
+            Assignment javaStudent = List.assignments.Find(x => x.AssignmentStream == "C#" && x.AssignmentType == "Full Time");
 
 
 
@@ -37,81 +81,7 @@ namespace IndividualProject
 
 
 
-
-
-
-
-            //List.CallAllTheInputs();
-
-            //List.InputToStudentList();
-
-            //StudentsPerCourseJava.PrintListOfStudentsInJavaFullTime();
-
-
-
-            //CommandPromptUtils cpUtils = new CommandPromptUtils(); // we need to create the CommandPromptUtils so we can use the methode below
-            //Trainer trainer = cpUtils.GetTrainerDetails();
-            ////Console.WriteLine(trainer);
-
-            //CommandPromptUtils cpUtils2 = new CommandPromptUtils(); 
-            //Trainer trainer2 = cpUtils.GetTrainerDetails();
-            //Console.WriteLine(trainer2);
-
-            //Trainer trainer = new Trainer(); // make sure to "call" the currect namespace at the top
-            //trainer.FirstName = "G"; // setFirstName set
         }
 
-        //static void InputToTrainersList()
-        //{
-        //    CommandPromptUtils cpUtils = new CommandPromptUtils();
-        //    Console.Write("Please write number of trainers to be inputed: ");
-        //    int trainerInputs = Int32.Parse(Console.ReadLine());
-        //    List<Trainer> trainers = new List<Trainer>();
-        //    for (int i = 1; i <= trainerInputs; i++)
-        //    {
-        //        trainers.Add(cpUtils.GetTrainerDetails());                
-        //    }
-        //    cpUtils.PrintTrainersList(trainers); 
-        //}
-        
-        //static void InputToCourseList()
-        //{
-        //    CommandPromptUtils cpUtils = new CommandPromptUtils();
-        //    Console.Write("Please write number of courses to be inputed: ");
-        //    int courseInputs = Int32.Parse(Console.ReadLine());
-        //    List<Course> courses = new List<Course>();
-        //    for (int i = 1; i <= courseInputs; i++)
-        //    {
-        //        courses.Add(cpUtils.GetCourseDetails());                
-        //    }
-        //    cpUtils.PrintCoursesList(courses);
-        //}
-        //static void InputToStudentList()
-        //{
-        //    CommandPromptUtils cpUtils = new CommandPromptUtils();
-        //    Console.Write("Please write number of students to be inputed: ");
-        //    int studentInputs = Int32.Parse(Console.ReadLine());
-        //    List<Student> students = new List<Student>();
-        //    for (int i = 1; i <= studentInputs; i++)
-        //    {                
-        //        students.Add(cpUtils.GetStudentDetails());                
-        //    }
-        //    cpUtils.PrintStudentsList(students);
-        //}
-
-        //static void InputToAssignmentList()
-        //{
-        //    CommandPromptUtils cpUtils = new CommandPromptUtils();
-        //    Console.Write("Please write number of assignments to be inputed: ");
-        //    int assignmentInputs = Int32.Parse(Console.ReadLine());
-        //    List<Assignment> assignments = new List<Assignment>();
-        //    for (int i = 1; i <= assignmentInputs; i++)
-        //    {
-        //        assignments.Add(cpUtils.GetAssignmentDetails());
-        //    }
-        //    cpUtils.PrintAssignmentsList(assignments);
-        //}
-
-        // Create appropriate methodes in order to ask from the user date for main classes
     }
 }

@@ -9,8 +9,9 @@ namespace IndividualProject.BusinessLogic
 {
     class AssignmentsJava
     {
-        //protected internal static List<Assignment> assignmentInJavaFullTime = List.assignments.FindAll(assignment => assignment.AssignmentStream == "Java" && assignment.AssignmentType == "Full Time");
-        protected internal static List<Assignment> assignmentInJavaFullTime = List.assignments.FindAll(assingmetn => assingmetn.AssignmentStream == "Java" && assingmetn.AssignmentType == "Full Time");
+
+        
+        protected internal static  List<Assignment> assignmentInJavaFullTime = List.assignments.FindAll(assignment => assignment.AssignmentStream == "Java" && assignment.AssignmentType == "Full Time");
 
         protected internal static void PrintListOfAssignmentInJavaFullTime()
         {
@@ -19,14 +20,6 @@ namespace IndividualProject.BusinessLogic
                 Console.WriteLine(assignment);
             }
         }
-        //protected internal static void PrintListOfAssignmentInJavaFullTime()
-        //{
-        //    //List<Assignment> assignmentInJavaFullTime = List.assignments.FindAll(assignment => assignment.AssignmentStream == "Java" && assignment.AssignmentType == "Full Time");
-        //    foreach (var assignment in assignmentInJavaFullTime)
-        //    {
-        //        Console.WriteLine(assignment);
-        //    }
-        //}
 
         protected internal static void PrintListOfAssignmentInJavaPartTime()
         {

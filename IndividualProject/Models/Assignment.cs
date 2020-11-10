@@ -82,7 +82,7 @@ namespace IndividualProject.Models
                     $"\tTitle: {_title}" +
                     $"\tDescription: {_description}" +
                     $"\tSubmission Date & Time: {_subdatetime.ToString("dd/MM/yyyy HH:mm")}" +
-                    $"\tOral Mark: {_oralmark.ToString("0.00")}\tTotal Mark: {_totalmark.ToString("0.00")}"); 
+                    $"\tOral Mark: {_oralmark.ToString("0.00")}\tTotal Mark: {_totalmark.ToString("0.00")}");
         }
     }
 }

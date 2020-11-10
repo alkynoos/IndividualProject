@@ -98,7 +98,7 @@ namespace IndividualProject.BusinessLogic
 
         public Student GetStudentDetails(List<string> studentsStream = null, List<string> streamType = null)
         {
-            if (studentsStream == null) studentsStream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
+            if (studentsStream == null) studentsStream = new List<string>() { "C#", "Java", "JavaScript", "PHP", "Python" };
             if (streamType == null) streamType = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
             Student student = new Student();
             student.FirstName = AskDetail("Give me student first name");
@@ -111,7 +111,7 @@ namespace IndividualProject.BusinessLogic
             return (student);
         }
 
-        protected internal static void PrintStudentsList(List<Student> students) //--> can i find a common value for the Classes so i can make one print methode for all
+        protected internal static void PrintStudentsList(List<Student> students) 
         {
             foreach (var item in students)
             {
@@ -130,7 +130,7 @@ namespace IndividualProject.BusinessLogic
             Assignment assignment = new Assignment();
             assignment.AssignmentStream = AskDetail("Select assigment Stream", assignmentStream);
             assignment.AssignmentType = AskDetail("Select assigment Stream Type", assignmentType);
-            assignment.Title = AskDetail("Give me assigment title");
+            assignment.Title = AskDetail("Give me assigment title");            
             assignment.Description = AskDetail("Give me description");
             assignment.SubDateTime = Convert.ToDateTime(AskDetail("Give submission date & time"));
             assignment.OralMark = float.Parse(AskDetail("Give oral mark"));  

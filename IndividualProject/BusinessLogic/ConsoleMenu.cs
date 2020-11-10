@@ -196,7 +196,7 @@ namespace IndividualProject.BusinessLogic
                     break;
                 case '5':
                     Console.Clear();
-                    Console.WriteLine("Back to Main Menu ");
+                    Console.WriteLine("Back to Main Menu. ");
                     Menu();
                     Console.ReadKey();
                     Console.Clear();
