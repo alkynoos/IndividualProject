@@ -24,8 +24,6 @@ namespace IndividualProject.BusinessLogic
                 }
             }
 
-
-
             foreach (var assignment in assignmentInJavaFullTime)
             {
                 Console.WriteLine(assignment);

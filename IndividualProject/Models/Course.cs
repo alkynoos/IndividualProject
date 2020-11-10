@@ -30,7 +30,7 @@ namespace IndividualProject.Models
         public int TitleNumber
         {
             get { return (this._titlenumber); }
-            set { this._titlenumber = value; } // maybe the value needs formating
+            set { this._titlenumber = value; } 
         }
         public string Stream
         {
@@ -45,7 +45,7 @@ namespace IndividualProject.Models
         public DateTime Start_Date
         {
             get { return (this._start_date); }
-            set { this._start_date = value; }  // date need formationg
+            set { this._start_date = value; }  
         }
         public DateTime End_Date
         {

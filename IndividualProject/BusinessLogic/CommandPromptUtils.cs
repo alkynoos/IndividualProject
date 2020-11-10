@@ -12,9 +12,9 @@ namespace IndividualProject.BusinessLogic
     class CommandPromptUtils
     {
         //-----------Trainer-------------------
-        public Trainer GetTrainerDetails(List<string> subjects = null) //--> So we can give other list
+        public Trainer GetTrainerDetails(List<string> subjects = null) 
         {
-            if (subjects == null) subjects = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" }; // --> so we can use an other if given or use the defult
+            if (subjects == null) subjects = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" }; 
             Trainer trainer = new Trainer();
             trainer.FirstName   = AskDetail("Give me your first name");
             trainer.LastName    = AskDetail("Give me your last name");
@@ -23,13 +23,12 @@ namespace IndividualProject.BusinessLogic
             return (trainer);
         }
         
-        private string AskDetail(string message, List<string> subjects = null) //--> null makes the AskDetails when used not to bring error or 
-        {                                                                      //--> I whould need when using AskDetail passing null in the properties
+        private string AskDetail(string message, List<string> subjects = null)  
+        {                                                                      
             string result = "";
             Console.Write(message + ": ");
             if (subjects != null)
             {
-                //ask for the subject the trainer teaches
                 result = SelectFromListOfStrings(subjects);
             }
             else
@@ -40,7 +39,7 @@ namespace IndividualProject.BusinessLogic
             return (result);
         }
 
-        private string SelectFromListOfStrings(List<string> elements) //--> we rename the method so we make it versatile for future use
+        private string SelectFromListOfStrings(List<string> elements)
         {
             string result = "";
             int counter = 1;
@@ -76,10 +75,10 @@ namespace IndividualProject.BusinessLogic
             if (stream == null) stream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
             if (type == null) type = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
             Course course = new Course();
-            course.TitleNumber = Convert.ToInt32(AskDetail("Give Coding Bootcamp No"));  //--> see if we can use smaller data value
+            course.TitleNumber = Convert.ToInt32(AskDetail("Give Coding Bootcamp No"));  
             course.Stream = AskDetail("Select Stream", stream);
             course.Type = AskDetail("Select Type", type);
-            course.Start_Date = Convert.ToDateTime(AskDetail("Give Start Date"));  //--> confirm correct operation !!! FIX INPUT FORMAT
+            course.Start_Date = Convert.ToDateTime(AskDetail("Give Start Date")); 
             course.End_Date = Convert.ToDateTime(AskDetail("Give End Date"));
             Console.Clear();
             return (course);
@@ -120,7 +119,7 @@ namespace IndividualProject.BusinessLogic
         }
 
 
-        ////-------------Assignment--------------------------
+        //-------------Assignment--------------------------
 
         
         public Assignment GetAssignmentDetails(List<string> assignmentStream = null, List<string> assignmentType = null)
@@ -147,27 +146,5 @@ namespace IndividualProject.BusinessLogic
             }
         }
 
-
-        //private string AskDetail(string message, List<string> subjects = null) //--> null makes the AskDetails when used not to bring error or 
-        //{                                                                      //--> I whould need when using AskDetail passing null in the properties
-        //    string result = "";
-        //    int subjectCount = subjects.Count();
-        //    Console.Write(message + ": ");
-        //    do
-        //    {
-        //        if (subjects != null)
-        //        {
-        //            //ask for the subject the trainer teaches
-        //            result = SelectFromListOfStrings(subjects);
-        //        }
-        //        else
-        //        {
-        //            result = Console.ReadLine();
-        //        }
-        //    } while (0 < Int32.Parse(result) && Int32.Parse(result) >= subjectCount);
-
-
-        //    return (result);
-        //}
     }
 }

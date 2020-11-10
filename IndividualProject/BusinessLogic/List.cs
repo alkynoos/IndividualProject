@@ -80,7 +80,6 @@ namespace IndividualProject.BusinessLogic
         {
             CommandPromptUtils cpUtils = new CommandPromptUtils();
             Console.Write("Please write number of assignments to be inputed: ");
-
             string input = Console.ReadLine();
             int assignmentInputs = 0;
             if (int.TryParse(input, out assignmentInputs))

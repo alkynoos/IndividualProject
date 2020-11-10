@@ -25,8 +25,8 @@ namespace IndividualProject.Models
         }
 
         public string FirstName
-        {                                    // this gives as the ability to "set" a value from "outside" for private string firstName, 
-           get { return (this._firstname); } //but when we "get" the value we can formated as we like from "inside"
+        {                                     
+           get { return (this._firstname); } 
            set { this._firstname = value; } 
         }
 

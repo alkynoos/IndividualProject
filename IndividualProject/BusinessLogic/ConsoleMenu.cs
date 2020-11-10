@@ -214,7 +214,6 @@ namespace IndividualProject.BusinessLogic
         }
 
 
-
         protected internal static void PrintStudentsPerCourse()
         {
             Console.WriteLine("Choose Action: ");
@@ -1075,10 +1074,6 @@ namespace IndividualProject.BusinessLogic
             }
 
         }
-
-
-
-
     }
     
 }
