@@ -14,6 +14,7 @@ namespace IndividualProject
         {
             //ConsoleMenu.Menu();
 
+            // o kodikas katw apo edw einai gia na "testerw" pio eykola ekei pou exw problima
 
             Console.WriteLine("Testing");
             Console.WriteLine("populating the lists with data");
@@ -34,19 +35,19 @@ namespace IndividualProject
             Console.Clear();
 
             Console.WriteLine("using the method");
-            AssignmentsJava.PrintListOfAssignmentInJavaFullTime();
+            AssignmentsJava.PrintListOfAssignmentInJavaFullTime();//-------------------------> auto einai opws to kalo apo th class
 
             Console.ReadLine();
             Console.Clear();
 
             Console.WriteLine("Callign .FindAll Direct at Main");
-            List<Assignment> helloThere = new List<Assignment>(List.assignments.FindAll(x => x.AssignmentStream.Equals("Java") && x.AssignmentType.Equals("Full Time")));
+            List<Assignment> testList = new List<Assignment>(List.assignments.FindAll(x => x.AssignmentStream.Equals("Java") && x.AssignmentType.Equals("Full Time"))); //-----> etsi to grafw sth class 
 
 
             Console.ReadLine();
             Console.Clear();
 
-            Console.WriteLine("Using for loop at Main");
+            Console.WriteLine("Using for loop at Main");// ------------------. pospa8w to idio me for
 
             if (List.assignments.Count != 0)
             {

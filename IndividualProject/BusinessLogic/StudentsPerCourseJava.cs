@@ -10,6 +10,10 @@ namespace IndividualProject.BusinessLogic
     class StudentsPerCourseJava 
     {
         protected internal static List<Student> studentsInJavaFullTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Full Time");
+        protected internal static List<Student> studentsInJavaPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Part Time");
+        protected internal static List<Student> studentsInJavaOnline = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Online");
+        protected internal static List<Student> studentsInJavaHybridFullTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Hybrid Full Time");
+        protected internal static List<Student> studentsInJavaHybridPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Hybrid Part Time");
 
         protected internal static void PrintListOfStudentsInJavaFullTime()
         {
@@ -20,7 +24,7 @@ namespace IndividualProject.BusinessLogic
             }
         }
 
-        protected internal static List<Student> studentsInJavaPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Part Time");
+       
         protected internal static void PrintListOfStudentsInJavaPartTime()
         {
             //List<Student> studentsInJavaPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Part Time");
@@ -32,7 +36,7 @@ namespace IndividualProject.BusinessLogic
 
         protected internal static void PrintListOfStudentsJavaInOnline()
         {
-            List<Student> studentsInJavaOnline = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Online");
+            //List<Student> studentsInJavaOnline = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Online");
             foreach (var student in studentsInJavaOnline)
             {
                 Console.WriteLine(student);
@@ -41,7 +45,7 @@ namespace IndividualProject.BusinessLogic
 
         protected internal static void PrintListOfStudentsInJavaHybridFullTime()
         {
-            List<Student> studentsInJavaHybridFullTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Hybrid Full Time");
+            //List<Student> studentsInJavaHybridFullTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Hybrid Full Time");
             foreach (var student in studentsInJavaHybridFullTime)
             {
                 Console.WriteLine(student);
@@ -50,7 +54,7 @@ namespace IndividualProject.BusinessLogic
 
         protected internal static void PrintListOfStudentsInJavaHybridPartTime()
         {
-            List<Student> studentsInJavaHybridPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Hybrid Part Time");
+            //List<Student> studentsInJavaHybridPartTime = List.students.FindAll(student => student.StudentStream == "Java" && student.StreamType == "Hybrid Part Time");
             foreach (var student in studentsInJavaHybridPartTime)
             {
                 Console.WriteLine(student);
