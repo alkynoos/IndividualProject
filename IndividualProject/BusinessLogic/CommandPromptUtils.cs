@@ -18,7 +18,7 @@ namespace IndividualProject.BusinessLogic
             Trainer trainer = new Trainer();
             trainer.FirstName   = AskDetail("Give me your first name");
             trainer.LastName    = AskDetail("Give me your last name");
-            trainer.Subject     = AskDetail("Select me your subject you teach",subjects);
+            trainer.Subject     = AskDetail("Select the subject you teach",subjects);
             Console.Clear();
             return (trainer);
         }

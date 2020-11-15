@@ -25,16 +25,12 @@ namespace IndividualProject.BusinessLogic
                         studentsInMoreCourses.Add(List.students[j]);
                     }
                 }
-
             }
 
             foreach (var students in studentsInMoreCourses)
             {
                 Console.WriteLine(students);
-            }
-            
-        }
-
-        
+            }            
+        }        
     }
 }

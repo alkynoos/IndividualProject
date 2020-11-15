@@ -7,25 +7,27 @@ using System.Threading.Tasks;
 
 namespace IndividualProject.BusinessLogic
 {
-    class TrainersPerCourse
+    class AssignmentsPerCourse
     {
-
-        protected internal static List<string> subject = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
         
+        protected internal static List<string> stream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
+        protected internal static List<string> type = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
 
-        protected internal void ListOfTrainerPerCourse()
+
+        protected internal void ListOfAssignmentsPerCourse()
         {
-            PrintList(MakeListTrainerPerCourse(SelectFromListOfSrings(subject)));
+            PrintList(MakeListAssignmentPerCourse(SelectFromListOfSrings(stream), SelectFromListOfSrings(type)));
         }
 
-        protected internal static List<Trainer> MakeListTrainerPerCourse(string subject)
+        protected internal List<Assignment> MakeListAssignmentPerCourse(string stream, string type)
         {
 
-            List<Trainer> trainerPerCourse = List.trainers.FindAll(trainer => trainer.Subject == subject);
-            return (trainerPerCourse);
+            List<Assignment> assignmentPerCourse = List.assignments.FindAll(assignment => assignment.AssignmentStream == stream && assignment.AssignmentType == type);
+
+            return (assignmentPerCourse);
         }
 
-        protected internal static void PrintList(List<Trainer> list)
+        protected internal static void PrintList(List<Assignment> list)
         {
             foreach (var item in list)
             {
@@ -33,7 +35,7 @@ namespace IndividualProject.BusinessLogic
             }
         }
 
-        private string SelectFromListOfSrings(List<string> element)
+        protected internal string SelectFromListOfSrings(List<string> element)
         {
             string result = "";
             int counter = 1;
@@ -50,5 +52,6 @@ namespace IndividualProject.BusinessLogic
             result = element.ElementAt(choice - 1);
             return (result);
         }
+
     }
 }

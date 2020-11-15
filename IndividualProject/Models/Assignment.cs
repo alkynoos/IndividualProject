@@ -35,13 +35,13 @@ namespace IndividualProject.Models
         
 
         
-        public string AssignmentStream
+        public string AssignmentType
         {
             get { return (this._assignmentType); }
             set { this._assignmentType = value; }
         }
 
-        public string AssignmentType
+        public string AssignmentStream
         {
             get { return (this._assignmentStream); }
             set { this._assignmentStream = value; }
