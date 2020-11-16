@@ -46,16 +46,30 @@ namespace IndividualProject.BusinessLogic
             Console.WriteLine();
             foreach (var item in elements)
             {
-                Console.WriteLine($"{counter++}. {item}"); // --> test the counter                
+                Console.WriteLine($"{counter++}. {item}");                 
             }
-            int choice = Int32.Parse(Console.ReadLine());
 
-            while (choice > elements.Count || choice <= 0)
+
+            string userInput = Console.ReadLine();
+            int choice = 0;
+
+            if (int.TryParse(userInput, out choice))
+            {
+                if (choice < elements.Count && choice > 0)
+                {
+                    result = elements.ElementAt(choice - 1);
+                }
+                else
+                {
+                    Console.Write("Enter Correct selection: ");
+                    SelectFromListOfStrings(elements);
+                }
+            }            
+            else
             {
                 Console.Write("Enter Correct selection: ");
-                choice = Convert.ToInt32(Console.ReadLine());
+                SelectFromListOfStrings(elements);
             }
-            result = elements.ElementAt(choice - 1);//elements[choice - 1];
             return (result);
         }
 
@@ -75,7 +89,7 @@ namespace IndividualProject.BusinessLogic
             if (stream == null) stream = new List<string>() { "C#", "Java", "Python", "JavaScript", "PHP" };
             if (type == null) type = new List<string>() { "Full Time", "Part Time", "Online", "Hybrid Full Time", "Hybrid Part Time" };
             Course course = new Course();
-            course.TitleNumber = Convert.ToInt32(AskDetail("Give Coding Bootcamp No"));  
+            course.TitleNumber = Convert.ToInt32(AskDetail("Give Coding Bootcamp No"));  //--> needs check for wrong input
             course.Stream = AskDetail("Select Stream", stream);
             course.Type = AskDetail("Select Type", type);
             course.Start_Date = Convert.ToDateTime(AskDetail("Give Start Date")); 
@@ -132,7 +146,7 @@ namespace IndividualProject.BusinessLogic
             assignment.Title = AskDetail("Give me assigment title");            
             assignment.Description = AskDetail("Give me description");
             assignment.SubDateTime = Convert.ToDateTime(AskDetail("Give submission date & time"));
-            assignment.OralMark = float.Parse(AskDetail("Give oral mark"));  
+            assignment.OralMark = float.Parse(AskDetail("Give oral mark"));   //--> needs check for wrong input
             assignment.TotalMark = float.Parse(AskDetail("Give total mark"));
             Console.Clear();
             return (assignment);
