@@ -96,51 +96,5 @@ namespace IndividualProject.BusinessLogic
                                  
         }
 
-
-
-
-        //protected internal static void StudentAssignments()
-        //{
-        //    foreach (var student in students)
-        //    {
-        //        Console.WriteLine(student);
-
-        //        foreach (var assignment in assignments)
-        //        {
-
-        //            if (student.StudentStream.Equals("Java") && assignment.AssignmentStream.Equals("Java") && student.StreamType.Equals("Full Time") && assignment.AssignmentType.Equals("Full Time"))
-        //            {
-
-
-        //                Console.WriteLine($"Student {student.FirstName} {student.LastName} " +
-        //                                  $"\nhas the Assignment {assignment.Title} {assignment.Description} " +
-        //                                  $"\nthat is due for {assignment.SubDateTime}");
-        //                Console.WriteLine("-----------------------------------------------------------------------------------");
-        //            }
-        //            else
-        //            {
-        //                continue;
-        //            }
-        //        }
-        //    }
-
-        //    for (int i = 0; i < students.Count; i++)
-        //    {
-        //        for (int j = 0; j < assignments.Count; j++)
-        //        {
-        //            if (students[i].StudentStream.Equals(assignments[j].AssignmentStream) && students[i].StreamType.Equals(assignments[j].AssignmentType))
-        //            {
-        //                Console.WriteLine("im in");
-
-        //                Console.WriteLine($"Student {students[i].FirstName} {students[i].LastName} " +
-        //                                  $"\nhas the Assignment {assignments[j].Title} {assignments[j].Description} " +
-        //                                  $"\nthat is due for {assignments[j].SubDateTime}");
-        //                Console.WriteLine("-----------------------------------------------------------------------------------");
-        //            }
-        //        }
-        //    }
-        //}
-
-
     }
 }

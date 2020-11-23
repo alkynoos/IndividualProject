@@ -19,7 +19,7 @@ namespace IndividualProject.BusinessLogic
             trainer.FirstName   = AskDetail("Give me your first name");
             trainer.LastName    = AskDetail("Give me your last name");
             trainer.Subject     = AskDetail("Select the subject you teach",subjects);
-            Console.Clear();
+            //Console.Clear();
             return (trainer);
         }
         
@@ -29,7 +29,7 @@ namespace IndividualProject.BusinessLogic
             Console.Write(message + ": ");
             if (subjects != null)
             {
-                result = SelectFromListOfStrings(subjects);
+                result = SelectFromListOfStrings( subjects);
             }
             else
             {
@@ -46,30 +46,25 @@ namespace IndividualProject.BusinessLogic
             Console.WriteLine();
             foreach (var item in elements)
             {
-                Console.WriteLine($"{counter++}. {item}");                 
+                Console.WriteLine($"{counter++}. {item}");
             }
 
-
-            string userInput = Console.ReadLine();
             int choice = 0;
-
-            if (int.TryParse(userInput, out choice))
+            do
             {
-                if (choice < elements.Count && choice > 0)
+                string userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out choice))
                 {
-                    result = elements.ElementAt(choice - 1);
+                    if (choice <= elements.Count && choice > 0)
+                    {
+                        result = elements.ElementAt(choice - 1);
+                        break;
+                    }                    
                 }
                 else
-                {
                     Console.Write("Enter Correct selection: ");
-                    SelectFromListOfStrings(elements);
-                }
-            }            
-            else
-            {
-                Console.Write("Enter Correct selection: ");
-                SelectFromListOfStrings(elements);
-            }
+            } while (true);
+
             return (result);
         }
 
